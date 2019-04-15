@@ -1,4 +1,4 @@
-module Task01(myFirst) where
+module Task01(myFirst, myLast) where
 
 myFirst::[t]->t
 myFirst [] = error "Can't call myFirst on empty list"
