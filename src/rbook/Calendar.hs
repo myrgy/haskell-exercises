@@ -1,5 +1,5 @@
 module Calendar where
-import           Prelude (Int, Char, String, Show(...), (++))
+import Prelude (Int, Char, String, Show(..), (++))
 
 data Date = Date Year Month Day
 data Year = Year Int
@@ -41,4 +41,4 @@ addZero :: String -> String
 addZero (a : []) = '0' : a : []
 addZero as       = as
 
-let ts = Time (Hour 14) (Minute 56) (Second 06)
+-- let ts = (Time (Hour 14) (Minute 56) (Second 6))
