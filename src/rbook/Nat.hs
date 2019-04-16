@@ -18,3 +18,9 @@ instance Num Nat where
 
         fromInteger 0 = Zero
         fromInteger n = Succ (fromInteger (n - 1))
+
+beside :: Nat -> Nat -> Bool
+beside a b = a == Succ b || b == Succ a
+
+beside2 :: Nat -> Nat -> Bool
+beside2 a b = a /= b && (beside a (Succ b) || beside (Succ a) b)
