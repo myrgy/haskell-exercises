@@ -1,4 +1,4 @@
-module Calendar where
+module Rbook.Calendar where
 import Prelude (Int, Char, String, Show(..), (++))
 
 data Date = Date Year Month Day
