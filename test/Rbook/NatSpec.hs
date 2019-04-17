@@ -6,6 +6,7 @@ where
 import           Test.Hspec
 import           Rbook.Nat                      ( beside
                                                 , beside2
+                                                , pow
                                                 )
 
 spec :: Spec
@@ -27,3 +28,8 @@ spec = do
                         beside2 43 1 `shouldBe` False
                         beside2 43 41 `shouldBe` True
                         beside2 41 43 `shouldBe` True
+
+                it "pow" $ do
+                        pow 1 1 `shouldBe` 1
+                        pow 2 1 `shouldBe` 2
+                        pow 2 3 `shouldBe` 8

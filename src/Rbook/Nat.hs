@@ -24,3 +24,7 @@ beside a b = a == Succ b || b == Succ a
 
 beside2 :: Nat -> Nat -> Bool
 beside2 a b = a /= b && (beside a (Succ b) || beside (Succ a) b)
+
+pow :: Nat -> Nat -> Nat
+pow _ Zero = Succ Zero
+pow a (Succ b) = a * pow a b
