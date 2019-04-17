@@ -4,10 +4,7 @@ module Rbook.NatSpec
 where
 
 import           Test.Hspec
-import           Rbook.Nat                      ( beside
-                                                , beside2
-                                                , pow
-                                                )
+import           Rbook.Nat
 
 spec :: Spec
 spec = do
@@ -33,3 +30,7 @@ spec = do
                         pow 1 1 `shouldBe` 1
                         pow 2 1 `shouldBe` 2
                         pow 2 3 `shouldBe` 8
+
+                it "sum" $ do
+                        ((4 :: Nat) + (5 :: Nat)) `shouldBe` (9 :: Nat)
+                        ((1 :: Nat) + (1000 :: Nat)) `shouldBe` (1001 :: Nat)

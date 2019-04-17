@@ -7,7 +7,7 @@ instance Num Nat where
         negate _ = error "negate is undefined for Num"
 
         (+) a Zero     = a
-        (+) a (Succ b) = Succ (a + b)
+        (+) a (Succ b) = Succ (if a > b then (a + b) else (b + a))
 
         (*) a Zero     = Zero
         (*) a (Succ b) = a + (a * b)
@@ -26,5 +26,9 @@ beside2 :: Nat -> Nat -> Bool
 beside2 a b = a /= b && (beside a (Succ b) || beside (Succ a) b)
 
 pow :: Nat -> Nat -> Nat
-pow _ Zero = Succ Zero
+pow _ Zero     = Succ Zero
 pow a (Succ b) = a * pow a b
+
+sumNat :: Nat -> Nat -> Nat
+sumNat a Zero     = a
+sumNat a (Succ b) = Succ (sumNat a b)
