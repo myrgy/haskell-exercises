@@ -34,3 +34,11 @@ spec = do
                 it "sum" $ do
                         ((4 :: Nat) + (5 :: Nat)) `shouldBe` (9 :: Nat)
                         ((1 :: Nat) + (1000 :: Nat)) `shouldBe` (1001 :: Nat)
+
+                it "filter" $ do
+                  let
+                    p = \x -> x > 10
+                    inList = [1, 2, 10, 11, 3, 15, -1]
+                    outList = [11, 15]
+                  (filter2 p inList) `shouldBe` (outList)
+                  (filterT p inList) `shouldBe` (outList)

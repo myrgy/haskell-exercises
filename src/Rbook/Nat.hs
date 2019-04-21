@@ -32,3 +32,26 @@ pow a (Succ b) = a * pow a b
 sumNat :: Nat -> Nat -> Nat
 sumNat a Zero     = a
 sumNat a (Succ b) = Succ (sumNat a b)
+
+filterT :: (a->Bool) -> [a] -> [a]
+filterT p a =
+  case a of
+    [] -> []
+    x:xs -> let rest = filterT p xs
+                in if (p x)
+                   then (x:rest)
+                   else rest
+
+compareT x y
+  | x == y = EQ
+  | x < y  = LT
+  | x > y  = GT
+
+mapT :: (a -> b) -> [a] -> [b]
+mapT f [] = []
+mapT f (x:xs) = f x : mapT f xs
+
+filter2 :: (a->Bool) -> [a] -> [a]
+filter2 p [] = []
+filter2 p (x:xs) | p x = x : filter2 p xs
+                 | otherwise = filter2 p xs
